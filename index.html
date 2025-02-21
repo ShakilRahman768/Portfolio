@@ -187,9 +187,12 @@
       /* Project Cards */
       .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-        gap: 20px; /* Space between cards */
-        max-width: 1200px; /* Set a max width */
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(300px, 1fr)
+        ); /* Responsive grid */
+        gap: 20px;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
@@ -199,7 +202,6 @@
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s, box-shadow 0.3s;
-        width: 300px;
       }
 
       .card:hover {
@@ -232,11 +234,13 @@
       /* Skills Section */
       .skills-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 3 items per row */
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(200px, 1fr)
+        ); /* Responsive grid */
         gap: 20px;
-        justify-content: center;
-        max-width: 1000px; /* Adjust based on your layout */
-        margin: 0 auto; /* Center align */
+        max-width: 1000px;
+        margin: 0 auto;
       }
 
       .skill {
@@ -324,6 +328,120 @@
 
       .animate-bounce {
         animation: bounce 0.8s ease-in-out;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 1024px) {
+        .hero h2 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .about-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .about-image img {
+          margin-top: 20px;
+        }
+
+        .grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .skills-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav ul {
+          margin-top: 10px;
+        }
+
+        .hero h2 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 0.9rem;
+        }
+
+        .about-text h2 {
+          font-size: 2rem;
+        }
+
+        .about-text p {
+          font-size: 1rem;
+        }
+
+        .section h2 {
+          font-size: 2rem;
+        }
+
+        .card h3 {
+          font-size: 1.3rem;
+        }
+
+        .card p {
+          font-size: 0.9rem;
+        }
+
+        .skill {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h2 {
+          font-size: 1.8rem;
+        }
+
+        .hero p {
+          font-size: 0.8rem;
+        }
+
+        .about-text h2 {
+          font-size: 1.8rem;
+        }
+
+        .about-text p {
+          font-size: 0.9rem;
+        }
+
+        .section h2 {
+          font-size: 1.8rem;
+        }
+
+        .card h3 {
+          font-size: 1.2rem;
+        }
+
+        .card p {
+          font-size: 0.8rem;
+        }
+
+        .skill {
+          font-size: 0.9rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+          font-size: 0.9rem;
+        }
+
+        .cta {
+          font-size: 1rem;
+        }
       }
     </style>
     <script>
@@ -457,7 +575,7 @@
             src="Images/Find Worker.jpg"
             alt="Find Worker App"
             style="
-              width: 300px;
+              width: 100%;
               height: 200px;
               object-fit: cover;
               border-radius: 10px;
@@ -486,7 +604,7 @@
             src="Images/eShop.jpg"
             alt="Find Worker App"
             style="
-              width: 300px;
+              width: 100%;
               height: 200px;
               object-fit: cover;
               border-radius: 10px;
@@ -514,7 +632,7 @@
             src="Images/Trend Tube.jpg"
             alt="Find Worker App"
             style="
-              width: 300px;
+              width: 100%;
               height: 200px;
               object-fit: cover;
               border-radius: 10px;
@@ -542,7 +660,7 @@
             src="Images/Test Your Luck.jpg"
             alt="Find Worker App"
             style="
-              width: 300px;
+              width: 100%;
               height: 200px;
               object-fit: cover;
               border-radius: 10px;
@@ -571,7 +689,7 @@
             src="Images/Diu Bus Schedule.jpg"
             alt="Find Worker App"
             style="
-              width: 300px;
+              width: 100%;
               height: 200px;
               object-fit: cover;
               border-radius: 10px;
